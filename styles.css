@@ -411,3 +411,58 @@
       height: 50px;
     }
   }
+
+  /* Añade estos estilos dentro de tu media query para móviles */
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 60px;
+    height: 60px;
+    padding: 0.8rem; /* Ajusta el padding interno */
+    flex-direction: column; /* Apila icono y texto verticalmente */
+  }
+
+  .whatsapp-btn i {
+    font-size: 1.5rem; /* Reduce el tamaño del icono */
+    margin: 0; /* Elimina el margen derecho */
+  }
+
+  .whatsapp-btn span {
+    display: none; /* Oculta el texto en móviles */
+    font-size: 0.8rem;
+  }
+
+  /* Mejora la accesibilidad */
+  .whatsapp-btn::after {
+    content: "Haz clic";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .whatsapp-btn:hover::after {
+    opacity: 1;
+  }
+}
+
+/* Mejoras generales para todos los tamaños */
+.whatsapp-btn {
+  white-space: nowrap; /* Evita que el texto se rompa */
+  gap: 0.5rem; /* Espacio entre icono y texto */
+  font-weight: 500;
+}
+
+/* Mejora la interacción táctil */
+.whatsapp-btn {
+  min-width: 52px;
+  min-height: 52px;
+}
